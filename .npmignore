@@ -5,3 +5,4 @@ test
 jest.config.js
 package-lock.json
 tsconfig.json
+.idea
