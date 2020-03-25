@@ -1,5 +1,5 @@
 /* eslint-disable no-magic-numbers */
-import TimeInterval from './TimeInterval';
+import TimeInterval from '../src/TimeInterval';
 
 describe('Named Constructors', () =>
 {

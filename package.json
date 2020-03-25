@@ -2,14 +2,14 @@
   "name": "timeinterval",
   "version": "1.0.0",
   "description": "A simple Time Interval class developed for working with javascript date objects and relationships between them.",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "jest",
     "build": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/evang522/ts-time.git"
+    "url": "git+https://github.com/evang522/timeinterval.git"
   },
   "keywords": [
     "time",
@@ -23,13 +23,14 @@
   "author": "Evan Garrett",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/evang522/ts-time/issues"
+    "url": "https://github.com/evang522/timeinterval/issues"
   },
-  "homepage": "https://github.com/evang522/ts-time#readme",
-  "dependencies": {
-    "jest": "^25.1.0"
-  },
+  "homepage": "https://github.com/evang522/timeinterval#readme",
+  "dependencies": {},
   "devDependencies": {
+    "jest": "^25.1.0",
+    "@types/jest": "^25.1.4",
+    "@types/node": "^12.12.31",
     "typescript": "^3.8.3"
   }
 }
