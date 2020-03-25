@@ -23,6 +23,13 @@ describe('Named Constructors', () =>
         expect(interval.inDays()).toBe(7);
     });
 
+    it('For Specified Weeks', () =>
+    {
+        const interval = TimeInterval.forSpecifiedWeeks(3);
+
+        expect(interval.inDays()).toBe(21);
+    });
+
     it('For One Hour', () =>
     {
         const interval = TimeInterval.forOneHour();

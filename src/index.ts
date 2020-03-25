@@ -1,3 +1,3 @@
-import TimeInterval from "./TimeInterval";
+import TimeInterval from './TimeInterval';
 
-export default TimeInterval
+export default TimeInterval;

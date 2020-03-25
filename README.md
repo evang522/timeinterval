@@ -73,6 +73,10 @@ const interval = TimeInterval.forSpecifiedWeeks(5);
 
 interval.addToDate(now) // produces a new date that is exactly 5 weeks from the provided date.
 ```
+## Detailed Method Documentation
+The code is straightforward enough that you should be able to understand everything by looking at the single source file.
+
+Check it out [here](/src/TimeInterval.ts)
 
 
 ## Important Notes
@@ -85,6 +89,8 @@ const lastWeek = new Date('2020-01-05');
 const today = new Date('2020-01-12');
 
 const interval = TimeInterval.fromTimeBetweenTwoDates(lastWeek, today);
+
+interval.inSeconds()  // will ALWAYS be positive
 ```
 
 All time intervals will have positive values. In the future perhaps we can add some specific methods

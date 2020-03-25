@@ -7,9 +7,9 @@
     "test": "jest",
     "build": "tsc",
     "release": "np",
-    "prepublishOnly": "npm run test && npm run build",
+    "prepublishOnly": "npm run test && npm run lint:errors && npm run build",
     "test-watch": "jest --watchAll=true",
-    "lint:errors": "eslint ./src/**/*.{ts,tsx,js} eslint ./test/**/*.{ts,tsx,js} --quiet && tsc --noEmit -p .",
+    "lint:errors": "eslint ./src/**/*.{ts,tsx,js} ./test/**/*.{ts,tsx,js} --quiet && tsc --noEmit -p .",
     "lint:fixAll": "eslint ./src/**/*.{ts,tsx,js} --fix"
   },
   "repository": {

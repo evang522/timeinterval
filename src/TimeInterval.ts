@@ -79,6 +79,11 @@ class TimeInterval implements TimeIntervalInterface
         return new this(this.ONE_WEEK);
     }
 
+    public static forSpecifiedWeeks(weeks: number): TimeInterval
+    {
+        return new this(this.ONE_WEEK * weeks);
+    }
+
     public static absoluteTimeFromNow(date: Date): TimeInterval
     {
         return TimeInterval.fromTimeBetweenTwoDates(Date.now(), date.getTime());
