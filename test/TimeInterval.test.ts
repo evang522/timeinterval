@@ -30,6 +30,27 @@ describe('Named Constructors', () =>
         expect(interval.inHours()).toBe(1);
     });
 
+    it('For One Minute', () =>
+    {
+        const interval = TimeInterval.forOneMinute();
+        expect(interval.inMinutes()).toBe(1);
+    });
+
+    it('For Specified Minutes', () =>
+    {
+        const interval = TimeInterval.forSpecifiedMinutes(5);
+        expect(interval.inMinutes()).toBe(5);
+    });
+
+    it('For Specified Seconds', () =>
+    {
+        const interval = TimeInterval.forSpecifiedSeconds(22);
+
+        interval.inSeconds();
+
+        expect(interval.inSeconds()).toBe(22);
+    });
+
     it('For 24 Hours', () =>
     {
         const interval = TimeInterval.forSpecifiedHours(24);

@@ -1,11 +1,13 @@
 /* eslint-disable no-magic-numbers */
 
+import TimeIntervalInterface from './TimeIntervalInterface';
+
 /**
  * @description This service operates in absolutes. There is no difference taken into account between
  * 2 hours ago and 2 hours from now. They are both equal, because the focus is time intervals, not linear points
  * in time and their relations.
  */
-class TimeInterval
+class TimeInterval implements TimeIntervalInterface
 {
     // Millisecond Measures of Common Time Units
     public static readonly ONE_SECOND = 1000;
@@ -30,6 +32,26 @@ class TimeInterval
         const secondDateInMilliseconds = date2 instanceof Date ? date2.getTime() : date2;
 
         return new this(Math.abs(firstDateInMilliseconds - secondDateInMilliseconds));
+    }
+
+    public static forSpecifiedMilliseconds(milliseconds: number): TimeInterval
+    {
+        return new this(milliseconds);
+    }
+
+    public static forSpecifiedSeconds(seconds: number): TimeInterval
+    {
+        return new this(this.ONE_SECOND * seconds);
+    }
+
+    public static forOneMinute(): TimeInterval
+    {
+        return new this(this.ONE_MINUTE);
+    }
+
+    public static forSpecifiedMinutes(minutes: number): TimeInterval
+    {
+        return new this(this.ONE_MINUTE * minutes);
     }
 
     public static forOneHour(): TimeInterval
