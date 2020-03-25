@@ -1,6 +1,13 @@
 /* eslint-disable no-magic-numbers */
+
+/**
+ * @description This service operates in absolutes. There is no difference taken into account between
+ * 2 hours ago and 2 hours from now. They are both equal, because the focus is time intervals, not linear points
+ * in time and their relations.
+ */
 class TimeInterval
 {
+    // Millisecond Measures of Common Time Units
     public static readonly ONE_SECOND = 1000;
     public static readonly ONE_MINUTE = 60000;
     public static readonly ONE_DAY = 86400000;
@@ -14,7 +21,10 @@ class TimeInterval
         this.milliseconds = milliseconds;
     }
 
-    public static fromTimeBetweenTwoDates(date1: Date | number, date2: Date | number): TimeInterval
+    public static fromTimeBetweenTwoDates(
+        date1: Date | number,
+        date2: Date | number,
+    ): TimeInterval
     {
         const firstDateInMilliseconds = date1 instanceof Date ? date1.getTime() : date1;
         const secondDateInMilliseconds = date2 instanceof Date ? date2.getTime() : date2;
@@ -57,6 +67,11 @@ class TimeInterval
         return this.milliseconds;
     }
 
+    public inSeconds(): number
+    {
+        return this.milliseconds / TimeInterval.ONE_SECOND;
+    }
+
     public inMinutes(): number
     {
         return this.milliseconds / TimeInterval.ONE_MINUTE;
@@ -77,6 +92,10 @@ class TimeInterval
         return this.milliseconds / TimeInterval.ONE_WEEK;
     }
 
+    /**
+     * @description This should only ever be approximate, or not entirely accurate, as some years have more or less days
+     * according to the Gregorian Calendar.
+     */
     public inApproximateYears(): number
     {
         return this.milliseconds / (TimeInterval.ONE_DAY * 365 );
@@ -85,6 +104,16 @@ class TimeInterval
     public addToDate(date: Date): Date
     {
         return new Date(this.milliseconds + date.getTime());
+    }
+
+    public isLongerThan(interval: TimeInterval): boolean
+    {
+        return Math.abs(this.inMilliseconds()) > Math.abs(interval.inMilliseconds());
+    }
+
+    public isShorterThan(interval: TimeInterval): boolean
+    {
+        return Math.abs(this.inMilliseconds()) < Math.abs(interval.inMilliseconds());
     }
 }
 

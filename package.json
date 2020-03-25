@@ -1,0 +1,35 @@
+{
+  "name": "timeinterval",
+  "version": "1.0.0",
+  "description": "A simple Time Interval class developed for working with javascript date objects and relationships between them.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evang522/ts-time.git"
+  },
+  "keywords": [
+    "time",
+    "date",
+    "datetime",
+    "interval",
+    "hours",
+    "minutes",
+    "seconds"
+  ],
+  "author": "Evan Garrett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evang522/ts-time/issues"
+  },
+  "homepage": "https://github.com/evang522/ts-time#readme",
+  "dependencies": {
+    "jest": "^25.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
