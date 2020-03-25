@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "build": "tsc",
-    "release": "np"
+    "release": "np",
+    "prepublishOnly": "npm run test && npm run build"
   },
   "repository": {
     "type": "git",
