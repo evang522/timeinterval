@@ -79,7 +79,10 @@ The code is straightforward enough that you should be able to understand everyth
 Check it out [here](/src/TimeInterval.ts)
 
 
-## Important Notes
+## Important Note Regarding Time Relationships
+**TL;DR:** All Intervals are positive values.
+
+  
 This library operates on absolute time intervals. Theoretically speaking, a time interval has no negative or positive value, as it is only a relationship between two dates in time, and taking a stance from which point in time to view the difference (as positive or negative) is an additional property which the package currently does not support. Maybe later :) 
 
 Therefore, don't expect to get a negative value when you create a time interval between today and last week. 
