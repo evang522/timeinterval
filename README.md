@@ -1,3 +1,5 @@
+<img src="/assets/clock.png" width=100/>
+
 # Time Interval JS
 
 **A simple Time Interval class developed for working with javascript date objects and relationships between them.**
