@@ -1,6 +1,7 @@
 <img src="/assets/clock.png" width=100/>
 
 # Time Interval JS
+[![npm version](https://badge.fury.io/js/time-interval-js.svg)](https://badge.fury.io/js/time-interval-js) 
 
 **A simple Time Interval class developed for working with javascript date objects and relationships between them.**
 
@@ -64,7 +65,7 @@ weeksInterval.isLongerThan(daysInterval) // true
 daysInterval.isShorterThan(weeksInterval) // true
 ```
 
-**Adding Time Intervals to Dates**  
+### Adding Time Intervals to Dates  
 Want to calculate a date that is 5 weeks from now?
 ```js
 const now  = new Date();
