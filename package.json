@@ -1,6 +1,6 @@
 {
   "name": "time-interval-js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A simple Time Interval class developed for working with javascript date objects and relationships between them.",
   "main": "./dist/index.js",
   "scripts": {
