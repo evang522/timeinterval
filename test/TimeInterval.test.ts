@@ -1,5 +1,6 @@
 /* eslint-disable no-magic-numbers */
-import TimeInterval from '../src/TimeInterval';
+
+import { TimeInterval } from '../src';
 
 describe('Named Constructors', () =>
 {
@@ -147,3 +148,4 @@ describe('Comparison and Adding', () =>
         expect(interval.addToDate(date)).toEqual(new Date('2015-05-27'));
     });
 });
+

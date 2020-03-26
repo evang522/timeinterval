@@ -17,7 +17,7 @@ Install the package with NPM or yarn
 
 To import and use in your code:
 ```js
-import TimeInterval from 'time-interval-js'
+import { TimeInterval } from 'time-interval-js'
 ```
 
 And that's it.
@@ -76,8 +76,13 @@ interval.addToDate(now) // produces a new date that is exactly 5 weeks from the 
 ## Detailed Method Documentation
 The code is straightforward enough that you should be able to understand everything by looking at the single source file.
 
-Check it out [here](/src/TimeInterval.ts)
+Check it out [here](/src/TimeInterval.ts). 
 
+## Interfaces
+There is also a `TimeIntervalInterface` available if you want to mock the object for any reason. The `TimeInterval` class implements this interface.
+```js
+import { TimeIntervalInterface } from 'time-interval-js';
+```
 
 ## Important Note Regarding Time Relationships
 **TL;DR:** All Intervals are positive values.
