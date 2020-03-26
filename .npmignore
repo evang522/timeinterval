@@ -6,3 +6,6 @@ jest.config.js
 package-lock.json
 tsconfig.json
 .idea
+assets
+.eslintignore
+.eslintrc
