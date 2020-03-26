@@ -43,6 +43,7 @@
     "ts-jest": "^25.2.1",
     "typescript": "^3.8.3"
   },
+  "types": "dist/index.d.ts",
   "np": {
     "yarn": false,
     "contents": "dist"
