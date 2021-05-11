@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export default interface TimeIntervalInterface {
     inMilliseconds(): number;
 
@@ -14,6 +15,8 @@ export default interface TimeIntervalInterface {
     inApproximateYears(): number;
 
     addToDate(date: Date): Date;
+
+    subtractFromDate(date: Date): Date;
 
     isLongerThan(interval: TimeIntervalInterface): boolean;
 

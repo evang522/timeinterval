@@ -147,5 +147,29 @@ describe('Comparison and Adding', () =>
         const interval = TimeInterval.forOneWeek();
         expect(interval.addToDate(date)).toEqual(new Date('2015-05-27'));
     });
+
+    it('Subtract from Date -- one Day', () =>
+    {
+        const date = new Date('2015-05-27');
+
+        const interval = TimeInterval.forOneDay();
+        expect(interval.subtractFromDate(date)).toEqual(new Date('2015-05-26'));
+    });
+
+    it('Subtract from Date -- one Week', () =>
+    {
+        const date = new Date('2015-05-27');
+
+        const interval = TimeInterval.forOneWeek();
+        expect(interval.subtractFromDate(date)).toEqual(new Date('2015-05-20'));
+    });
+
+    it('Subtract from Date -- two Hours', () =>
+    {
+        const date = new Date('2015-05-27 12:00');
+
+        const interval = TimeInterval.forSpecifiedHours(2);
+        expect(interval.subtractFromDate(date)).toEqual(new Date('2015-05-27 10:00'));
+    });
 });
 

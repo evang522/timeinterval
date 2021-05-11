@@ -34,22 +34,22 @@ class TimeInterval implements TimeIntervalInterface
         return new this(Math.abs(firstDateInMilliseconds - secondDateInMilliseconds));
     }
 
-    public static forSpecifiedMilliseconds(milliseconds: number): TimeInterval
+    public static forSpecifiedMilliseconds(milliseconds: number): TimeIntervalInterface
     {
         return new this(milliseconds);
     }
 
-    public static forSpecifiedSeconds(seconds: number): TimeInterval
+    public static forSpecifiedSeconds(seconds: number): TimeIntervalInterface
     {
         return new this(this.ONE_SECOND * seconds);
     }
 
-    public static forOneMinute(): TimeInterval
+    public static forOneMinute(): TimeIntervalInterface
     {
         return new this(this.ONE_MINUTE);
     }
 
-    public static forSpecifiedMinutes(minutes: number): TimeInterval
+    public static forSpecifiedMinutes(minutes: number): TimeIntervalInterface
     {
         return new this(this.ONE_MINUTE * minutes);
     }
@@ -59,32 +59,32 @@ class TimeInterval implements TimeIntervalInterface
         return new this(this.ONE_HOUR);
     }
 
-    public static forSpecifiedHours(hours: number): TimeInterval
+    public static forSpecifiedHours(hours: number): TimeIntervalInterface
     {
         return new this(this.ONE_HOUR * hours);
     }
 
-    public static forOneDay(): TimeInterval
+    public static forOneDay(): TimeIntervalInterface
     {
         return new this(this.ONE_DAY);
     }
 
-    public static forSpecifiedDays(days: number): TimeInterval
+    public static forSpecifiedDays(days: number): TimeIntervalInterface
     {
         return new this(this.ONE_DAY * days);
     }
 
-    public static forOneWeek(): TimeInterval
+    public static forOneWeek(): TimeIntervalInterface
     {
         return new this(this.ONE_WEEK);
     }
 
-    public static forSpecifiedWeeks(weeks: number): TimeInterval
+    public static forSpecifiedWeeks(weeks: number): TimeIntervalInterface
     {
         return new this(this.ONE_WEEK * weeks);
     }
 
-    public static absoluteTimeFromNow(date: Date): TimeInterval
+    public static absoluteTimeFromNow(date: Date): TimeIntervalInterface
     {
         return TimeInterval.fromTimeBetweenTwoDates(Date.now(), date.getTime());
     }
@@ -125,7 +125,7 @@ class TimeInterval implements TimeIntervalInterface
      */
     public inApproximateYears(): number
     {
-        return this.milliseconds / (TimeInterval.ONE_DAY * 365 );
+        return this.milliseconds / (TimeInterval.ONE_DAY * 365);
     }
 
     public addToDate(date: Date): Date
@@ -133,12 +133,17 @@ class TimeInterval implements TimeIntervalInterface
         return new Date(this.milliseconds + date.getTime());
     }
 
-    public isLongerThan(interval: TimeInterval): boolean
+    public subtractFromDate(date: Date): Date
+    {
+        return new Date(date.getTime() - this.milliseconds);
+    }
+
+    public isLongerThan(interval: TimeIntervalInterface): boolean
     {
         return Math.abs(this.inMilliseconds()) > Math.abs(interval.inMilliseconds());
     }
 
-    public isShorterThan(interval: TimeInterval): boolean
+    public isShorterThan(interval: TimeIntervalInterface): boolean
     {
         return Math.abs(this.inMilliseconds()) < Math.abs(interval.inMilliseconds());
     }
